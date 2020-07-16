@@ -1,0 +1,7 @@
+.star {
+    color: lightgrey;
+}
+
+.star:hover {
+    color: yellow;
+}

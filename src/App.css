@@ -1,0 +1,16 @@
+body {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
+
+
+  .background-red {
+    background-color: rgb(195, 36, 235);
+  }
+  
+  .background-blue {
+    background-color: rgb(41, 3, 58);
+  }

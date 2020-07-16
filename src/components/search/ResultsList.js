@@ -1,14 +1,45 @@
 import React from 'react'
 
-import { List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+import { 
+    List, 
+    ListItem,
+    ListItemAvatar, 
+    ListItemText, 
+    IconButton,
+    Grid,
+} from '@material-ui/core';
 
-const ResultsList = () => (
-<List>
-    <ListItem>
-        <ListItemAvatar>Poster</ListItemAvatar>
-        <ListItemText primary="Movie title" secondary="Year, Cast"></ListItemText>
-    </ListItem>
-</List>
+import AddIcon from '@material-ui/icons/Add'
+
+    import styles from './ResultsList.module.css'
+
+    // https://image.tmdb.org/t/p/w200/iZf0KyrE25z1sage4SYFLCCrMi9.jpg
+    const getPosterUrl = (imageUri) => imageUri
+    ? `https://image.tmdb.org/t/p/w200${imageUri}`
+    : 'https://placehold.co/200x300?text=No+image'
+
+
+const ResultsList = (props) => (
+    <React.Fragment>
+    {props.movies.map((item) => (
+        <Grid container xs={12}>
+    <Grid item xs={2}>
+    <img src={getPosterUrl(item.poster_path)} className={styles.poster} />
+    </Grid>
+<Grid item xs={3}>
+    {item.original_title}
+    </Grid>
+<Grid item xs={2}>
+    {item.release_date}
+    </Grid>
+    <Grid item xs={2}>
+        <IconButton onClick={() => props.onAdd(item)}>
+            <AddIcon />
+        </IconButton>
+    </Grid>
+</Grid>
+))}
+</React.Fragment>
 )
 
 export default ResultsList;
