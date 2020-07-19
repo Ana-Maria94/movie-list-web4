@@ -1,0 +1,18 @@
+.carousel {
+    align-items: center;
+    padding-left: 300px;
+    background-color: rgb(163, 93, 230);
+    font-size: 25px;
+    font-style: oblique;
+    text-align: center;
+    color: lawngreen;
+}
+.carousel1 {
+    background-color: rgb(163, 93, 230);
+    color: lawngreen;
+
+}
+
+.photo1 {
+    font-size: larger;
+}

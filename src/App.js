@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import Header from './shared/header/Header'
 import {Container, TextField, Button } from '@material-ui/core';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
@@ -8,6 +8,10 @@ import MovieDetails from './components/movieDetalis/MovieDetails'
 import Search from './components/search/Search'
 import DropDownMenu from './components/dropDownMenu/DropDownMenu'
 import Images from './components/images/Images'
+import Footer from './components/footer/Footer'
+import Carousel from './components/carousel/Carousel'
+import Grid from '@material-ui/core/Grid'
+
 
 
 
@@ -107,13 +111,14 @@ class App extends React.Component {
     }
 
 
-
   render() {
     const {savedMovies, user} = this.state
   return (
-    
+    <div className="page-container">
+      <div className="content-wrap">
+    <div className="carousel1">
     <Router>
-      <DropDownMenu />
+    
      <div className="App">
       <Header user={user} onLogout={this.logout} />
         {user ? (
@@ -146,18 +151,28 @@ class App extends React.Component {
       <h2>Hello stranger!</h2>
         <h4>What is your name?</h4>
         <TextField label="Name" onChange={this.onUserChange} />
-        <Button variant="contained" onClick={this.handleAddUser}>
+        <Button variant="contained" onClick={this.handleAddUser} color='primary'>
           Save
           </Button>
         </Container>
-        
         )}
     </div>
     </Router>
-    )
+    <h3 className="carousel">POPULAR</h3>
+    <Carousel />
+    <Footer />
+    <Grid />
+    </div>
+    </div>
+    </div>
+  )
+    
   }
+
 }
 
-  
+
+
+
 
 export default App;

@@ -80,8 +80,8 @@ onChange={this.handleChange}
 onKeyPress={this.handleSearch}
 />
 <Button 
+className="carousel"
 variant="outlined" 
-color="normal" 
 startIcon={<SearchIcon />} 
 onClick={this.handleSearch}>
     Search

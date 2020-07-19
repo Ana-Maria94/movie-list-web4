@@ -1,9 +1,11 @@
 div.container {
     margin: 16px 0;
     display: flex;
+    color: rgb(57, 231, 80);
 }
 
 div.search {
     width: 75%;
     margin-right: 8px;
+    color: rgb(57, 231, 80);
 }
